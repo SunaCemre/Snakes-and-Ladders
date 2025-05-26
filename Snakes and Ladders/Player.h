@@ -1,19 +1,26 @@
 #pragma once
 #include <iostream>
+#include "Board.h"
 
 class Player
 {
+Board b;
 private: 
 	std::string color;
 	int location;
 
+
 public:
 	Player(std::string color) {
 		this->color = color;
-		this->location = 0;
+		this->location = b.getstart();
 	}
 
-	void move(int diceResult);
+	int move(int diceResult);
+	
+	std::string getColor() {
+		return this->color;
+	}
 
 
 };
